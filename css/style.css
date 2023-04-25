@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.vk-wrapper {
+  padding: 1em 0;
+}
+
+.title {
+  color: #333333;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  text-align: center;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  border: 15px solid #000;
+  border-radius: 20px 20px 0 0;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.screen-title {
+  color: #c6c6c6;
+  display: flex;
+  justify-content: center;
+  margin-top: -4px;
+  padding: 10px 0 20px;
+  background-color: #707070;
+  border-radius: 0 0 20px 20px;
+}
+
+.keyboard-wrapper {
+  width: 100%;
+  height: 374px;
+  background-color: #afafaf;
+  margin-top: -15px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.keyboard {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px 0px 40px 5px rgba(198, 198, 198, 0.41) inset;
+  border-radius: 10px;
+}
+
+.key {
+  cursor: pointer;
+}
+
+.key:hover {
+  /* background-color: rgba(33, 32, 32, 1); */
+  background-color: rgba(63, 63, 63, 1);
+  box-shadow: 0px 5px 37px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+.key .icon {
+  display: block;
+  height: 27px;
+}
+
+.keyboard-row {
+  display: flex;
+  column-gap: 8px;
+  margin-bottom: 8px;
+}
+
+.keyboard-row:last-child {
+  margin-bottom: 0;
+}
+
+.keyboard-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.keyboard-key.del {
+  width: 80px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+.keyboard-key.tab {
+  width: 80px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+.keyboard-key.caps {
+  width: 100px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+.keyboard-key.return {
+  width: 84px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+.keyboard-key.leftShift,
+.keyboard-key.rightShift {
+  width: 120px;
+  font-size: 12px;
+}
+
+.keyboard-key.leftShift {
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.keyboard-key.rightShift {
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.keyboard-key.keyFn,
+.keyboard-key.keyControlL,
+.keyboard-key.keyOptionL,
+.keyboard-key.keyOptionR {
+  font-size: 12px;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.keyboard-key.keyCommandL,
+.keyboard-key.keyCommandR {
+  width: 64px;
+  font-size: 12px;
+  align-items: end;
+}
+
+.keyboard-key.keySpace {
+  width: 272px;
+}
+
+.keyboard-arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 8px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". arrowUp ."
+    "arrowLeft arrowDown arrowRight";
+}
+
+.keyboard-arrows .key {
+  height: 24px;
+  line-height: 24px;
+}
+
+.arrowUp { grid-area: arrowUp; }
+
+.arrowUp .icon {
+  transform: rotate(90deg);
+}
+
+.arrowLeft { grid-area: arrowLeft; }
+
+.arrowDown { grid-area: arrowDown; }
+
+.arrowDown .icon {
+  transform: rotate(270deg);
+}
+
+.arrowRight { grid-area: arrowRight; }
+
+.arrowRight .icon {
+  transform: rotate(180deg);
+}
+
+.description,
+.language {
+  text-align: center;
+}
