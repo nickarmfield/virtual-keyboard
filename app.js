@@ -36,3 +36,22 @@ document.onkeyup = (event) => {
     document.querySelector('.keyboard').classList.remove("shifted")
   }
 }
+
+document.body.prepend(
+  createElement('div', 'container', [
+    createElement('div', 'vk-wrapper', [
+      createElement('h1', 'title', ['RSS Виртуальная клавиатура']),
+      createElement('div', 'screen', [
+        createElement('textarea', 'vk-textarea textarea', [], {id: 'textarea', rows: '15', autofocus: true}),
+        createElement('span', 'screen-title', ['RSSchool Pro'])
+      ]),
+      createElement('div', 'keyboard-wrapper', [
+        createElement('div', 'keyboard', [
+          createElement('div', 'keyboard-row', [])
+        ])
+      ], {id: 'keyboard'}),
+      createElement('p', 'description', ['Клавиатура создана в операционной системе MacOS']),
+      createElement('p', 'language', ['Для переключения языка комбинация: левыe shift + control'])
+    ])
+  ])
+)
