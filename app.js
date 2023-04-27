@@ -1,3 +1,11 @@
+function createElement(type, className, children = [], attrs = {}) {
+  el = document.createElement(type)
+  el.className = className
+  Object.assign(el, attrs)
+  children.forEach(item => el.append(item))
+  return el
+}
+
 document.onkeydown = (event) => {
   let allKey = document.querySelectorAll(`[data-key="${event.code}"]`)
   for (let key of allKey) {
