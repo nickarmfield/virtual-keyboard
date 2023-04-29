@@ -40,6 +40,19 @@ document.onkeyup = (event) => {
   }
 }
 
+function createKey(engLetter, ruLetter, data) {
+  return createElement('div', 'keyboard-key key', [
+    createElement('span', 'eng', [
+      createElement('span', 'caseUp', [engLetter.toUpperCase()]),
+      createElement('span', 'caseDown', [engLetter])
+    ]),
+    createElement('span', 'rus', [
+      createElement('span', 'caseUp', [ruLetter.toUpperCase()]),
+      createElement('span', 'caseDown', [ruLetter])
+    ])
+  ], {}, {'data-key': data})
+}
+
 document.body.prepend(
   createElement('div', 'container', [
     createElement('div', 'vk-wrapper', [
