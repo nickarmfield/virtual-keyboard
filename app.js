@@ -1,7 +1,10 @@
-function createElement(type, className, children = [], attrs = {}) {
+function createElement(type, className, children = [], props = {}, attrs = {}) {
   el = document.createElement(type)
   el.className = className
-  Object.assign(el, attrs)
+  Object.assign(el, props)
+  Object.entries(attrs).forEach(([key, value]) => {
+    el.setAttribute(key, value)
+  })
   children.forEach(item => el.append(item))
   return el
 }
