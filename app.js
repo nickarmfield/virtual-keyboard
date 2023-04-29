@@ -40,6 +40,19 @@ document.onkeyup = (event) => {
   }
 }
 
+function createDigit(upEn, downEn, upRu, downRu, data) {
+  return createElement('div', 'keyboard-key key', [
+    createElement('span', 'eng', [
+      createElement('span', 'caseUp', [upEn]),
+      createElement('span', 'caseDown', [downEn])
+    ]),
+    createElement('span', 'rus', [
+      createElement('span', 'caseUp', [upRu]),
+      createElement('span', 'caseDown', [downRu])
+    ])
+  ], {}, {'data-key': data})
+}
+
 function createKey(engLetter, ruLetter, data) {
   return createElement('div', 'keyboard-key key', [
     createElement('span', 'eng', [
