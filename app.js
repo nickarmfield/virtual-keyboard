@@ -66,6 +66,19 @@ function createKey(engLetter, ruLetter, data) {
   ], {}, {'data-key': data})
 }
 
+function createSysKey(engLetter, ruLetter, data) {
+  return createElement('div', 'keyboard-key key', [
+    createElement('span', 'eng', [
+      createElement('span', 'caseUp', [engLetter]),
+      createElement('span', 'caseDown', [engLetter])
+    ]),
+    createElement('span', 'rus', [
+      createElement('span', 'caseUp', [ruLetter]),
+      createElement('span', 'caseDown', [ruLetter])
+    ])
+  ], {}, {'data-key': data})
+}
+
 document.body.prepend(
   createElement('div', 'container', [
     createElement('div', 'vk-wrapper', [
@@ -90,8 +103,10 @@ document.body.prepend(
             createDigit(')', '0', ')', '0', 'Digit0'),
             createDigit('_', '-', '_', '-', 'Minus'),
             createDigit('+', '=', '+', '=', 'Equal'),
+            createSysKey('delete', 'delete', 'Backspace')
           ]),
           createElement('div', 'keyboard-row', [
+            createSysKey('tab', 'tab', 'Tab'),
             createKey('q', 'й', 'KeyQ'),
             createKey('w', 'ц', 'KeyW'),
             createKey('e', 'у', 'KeyE'),
@@ -104,9 +119,10 @@ document.body.prepend(
             createKey('p', 'з', 'KeyP'),
             createKey('[', 'х', 'BracketLeft'),
             createKey(']', 'ъ', 'BracketRight'),
-            createKey('\\', 'ё', 'Quote'),
+            createKey('\\', 'ё', 'Quote')
           ]),
           createElement('div', 'keyboard-row', [
+            createSysKey('caps lock', 'caps lock', 'CapsLock'),
             createKey('a', 'ф', 'KeyA'),
             createKey('s', 'ы', 'KeyS'),
             createKey('d', 'в', 'KeyD'),
@@ -118,8 +134,10 @@ document.body.prepend(
             createKey('l', 'д', 'KeyL'),
             createKey(';', 'ж', 'Semicolon'),
             createKey(`'`, 'э', 'Quote'),
+            createSysKey('return', 'return', 'Enter')
           ]),
           createElement('div', 'keyboard-row', [
+            createSysKey('shift', 'shift', 'ShiftLeft'),
             createKey('z', 'я', 'KeyZ'),
             createKey('x', 'ч', 'KeyX'),
             createKey('c', 'с', 'KeyC'),
@@ -130,8 +148,22 @@ document.body.prepend(
             createKey(',', 'б', 'Comma'),
             createKey('.', 'ю', 'Period'),
             createKey('/', '/', 'Slash'),
+            createSysKey('shift', 'shuft', 'ShiftRight')
           ]),
-          createElement('div', 'keyboard-row', [])
+          createElement('div', 'keyboard-row', [
+            createSysKey('control', 'control', 'ControlLeft'),
+            createSysKey('option', 'option', 'AltLeft'),
+            createSysKey('command', 'command', 'MetaLeft'),
+            createSysKey('', '', 'Space'),
+            createSysKey('command', 'command', 'MetaRight'),
+            createSysKey('option', 'option', 'AltRight'),
+            createElement('div', 'keyboard-arrows', [
+              createKey('\u25B2', '\u25B2', 'ArrowUp'),
+              createKey('\u25C0', '\u25C0', 'ArrowLeft'),
+              createKey('\u25BC', '\u25BC', 'ArrowDown'),
+              createKey('\u25BA', '\u25BA', 'ArrowRight')
+            ])
+          ])
         ])
       ], {id: 'keyboard'}),
       createElement('p', 'description', ['Клавиатура создана в операционной системе MacOS']),

@@ -69,7 +69,6 @@
 }
 
 .key:hover {
-  /* background-color: rgba(33, 32, 32, 1); */
   background-color: rgba(63, 63, 63, 1);
   box-shadow: 0px 5px 37px 2px rgba(0, 0, 0, 0.2) inset;
 }
@@ -101,70 +100,6 @@
   border-radius: 5px;
 }
 
-.keyboard-key.del {
-  width: 80px;
-  justify-content: flex-end;
-  align-items: end;
-  font-size: 12px;
-}
-
-.keyboard-key.tab {
-  width: 80px;
-  justify-content: flex-start;
-  align-items: end;
-  font-size: 12px;
-}
-
-.keyboard-key.caps {
-  width: 100px;
-  justify-content: flex-start;
-  align-items: end;
-  font-size: 12px;
-}
-
-.keyboard-key.return {
-  width: 84px;
-  justify-content: flex-end;
-  align-items: end;
-  font-size: 12px;
-}
-
-.keyboard-key.leftShift,
-.keyboard-key.rightShift {
-  width: 120px;
-  font-size: 12px;
-}
-
-.keyboard-key.leftShift {
-  justify-content: flex-start;
-  align-items: end;
-}
-
-.keyboard-key.rightShift {
-  justify-content: flex-end;
-  align-items: end;
-}
-
-.keyboard-key.keyFn,
-.keyboard-key.keyControlL,
-.keyboard-key.keyOptionL,
-.keyboard-key.keyOptionR {
-  font-size: 12px;
-  justify-content: flex-start;
-  align-items: end;
-}
-
-.keyboard-key.keyCommandL,
-.keyboard-key.keyCommandR {
-  width: 64px;
-  font-size: 12px;
-  align-items: end;
-}
-
-.keyboard-key.keySpace {
-  width: 272px;
-}
-
 .keyboard-arrows {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -181,24 +116,28 @@
   line-height: 24px;
 }
 
-.arrowUp { grid-area: arrowUp; }
-
-.arrowUp .icon {
-  transform: rotate(90deg);
+[data-key="ArrowUp"],
+[data-key="ArrowLeft"],
+[data-key="ArrowDown"],
+[data-key="ArrowRight"] {
+  font-size: 10px;
+  line-height: 12px;
 }
 
-.arrowLeft { grid-area: arrowLeft; }
-
-.arrowDown { grid-area: arrowDown; }
-
-.arrowDown .icon {
-  transform: rotate(270deg);
+[data-key="ArrowUp"] {
+  grid-area: arrowUp;
 }
 
-.arrowRight { grid-area: arrowRight; }
+[data-key="ArrowLeft"] {
+  grid-area: arrowLeft;
+}
 
-.arrowRight .icon {
-  transform: rotate(180deg);
+[data-key="ArrowDown"] {
+  grid-area: arrowDown;
+}
+
+[data-key="ArrowRight"] {
+  grid-area: arrowRight;
 }
 
 .description,
@@ -210,11 +149,11 @@
   display: none;
 }
 
-.keyboard.shifted .caseUp{
+.keyboard.shifted .caseUp {
   display: block;
 }
 
-.keyboard.shifted .caseDown{
+.keyboard.shifted .caseDown {
   display: none;
 }
 
@@ -233,4 +172,67 @@
 .pressed {
   background-color: rgba(63, 63, 63, 1);
   box-shadow: 0px 5px 37px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+[data-key="Tab"] {
+  width: 80px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="Backspace"] {
+  width: 80px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="CapsLock"] {
+  width: 100px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="Enter"] {
+  width: 84px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="ShiftLeft"],
+[data-key="ShiftRight"] {
+  width: 120px;
+  font-size: 12px;
+}
+
+[data-key="ShiftLeft"] {
+  justify-content: flex-start;
+  align-items: end;
+}
+
+[data-key="ShiftRight"] {
+  justify-content: flex-end;
+  align-items: end;
+}
+
+[data-key="ControlLeft"],
+[data-key="AltLeft"],
+[data-key="AltRight"] {
+  font-size: 12px;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+[data-key="MetaLeft"],
+[data-key="MetaRight"] {
+  width: 64px;
+  font-size: 12px;
+  align-items: end;
+}
+
+[data-key="Space"] {
+  width: 272px;
 }
