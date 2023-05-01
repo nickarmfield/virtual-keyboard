@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.vk-wrapper {
+  padding: 1em 0;
+}
+
+.title {
+  color: #333333;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  text-align: center;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+  border: 15px solid #000;
+  border-radius: 20px 20px 0 0;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.screen-title {
+  color: #c6c6c6;
+  display: flex;
+  justify-content: center;
+  margin-top: -4px;
+  padding: 10px 0 20px;
+  background-color: #707070;
+  border-radius: 0 0 20px 20px;
+}
+
+.keyboard-wrapper {
+  width: 100%;
+  height: 374px;
+  background-color: #afafaf;
+  margin-top: -15px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.keyboard {
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px 0px 40px 5px rgba(198, 198, 198, 0.41) inset;
+  border-radius: 10px;
+}
+
+.key {
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: rgba(63, 63, 63, 1);
+  box-shadow: 0px 5px 37px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+.key .icon {
+  display: block;
+  height: 27px;
+}
+
+.keyboard-row {
+  display: flex;
+  column-gap: 8px;
+  margin-bottom: 8px;
+}
+
+.keyboard-row:last-child {
+  margin-bottom: 0;
+}
+
+.keyboard-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.keyboard-arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 8px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". arrowUp ."
+    "arrowLeft arrowDown arrowRight";
+}
+
+.keyboard-arrows .key {
+  height: 24px;
+  line-height: 24px;
+}
+
+[data-key="ArrowUp"],
+[data-key="ArrowLeft"],
+[data-key="ArrowDown"],
+[data-key="ArrowRight"] {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+[data-key="ArrowUp"] {
+  grid-area: arrowUp;
+}
+
+[data-key="ArrowLeft"] {
+  grid-area: arrowLeft;
+}
+
+[data-key="ArrowDown"] {
+  grid-area: arrowDown;
+}
+
+[data-key="ArrowRight"] {
+  grid-area: arrowRight;
+}
+
+.description,
+.language {
+  text-align: center;
+}
+
+.keyboard .caseUp {
+  display: none;
+}
+
+.keyboard.shifted .caseUp {
+  display: block;
+}
+
+.keyboard.shifted .caseDown {
+  display: none;
+}
+
+.keyboard .rus {
+  display: none;
+}
+
+.keyboard.russian .rus{
+  display: block;
+}
+
+.keyboard.russian .eng{
+  display: none;
+}
+
+.pressed {
+  background-color: rgba(63, 63, 63, 1);
+  box-shadow: 0px 5px 37px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+[data-key="Tab"] {
+  width: 80px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="Backspace"] {
+  width: 80px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="CapsLock"] {
+  width: 100px;
+  justify-content: flex-start;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="Enter"] {
+  width: 84px;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 12px;
+}
+
+[data-key="ShiftLeft"],
+[data-key="ShiftRight"] {
+  width: 120px;
+  font-size: 12px;
+}
+
+[data-key="ShiftLeft"] {
+  justify-content: flex-start;
+  align-items: end;
+}
+
+[data-key="ShiftRight"] {
+  justify-content: flex-end;
+  align-items: end;
+}
+
+[data-key="ControlLeft"],
+[data-key="AltLeft"],
+[data-key="AltRight"] {
+  font-size: 12px;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+[data-key="MetaLeft"],
+[data-key="MetaRight"] {
+  width: 64px;
+  font-size: 12px;
+  align-items: end;
+}
+
+[data-key="Space"] {
+  width: 328px;
+}
